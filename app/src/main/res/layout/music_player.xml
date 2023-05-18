@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".components.MusicPlayer"
+    tools:ignore="MissingDefaultResource"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkmood"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#2F3237"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/musicplayrsmallpart"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/dms"
+                android:background="@color/black"
+                android:id="@+id/musicplayerartwork"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="14dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserratsemibold"
+                    android:id="@+id/smallsongtitle"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="YMusic - Airtel buzz"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserratlightitalic"
+                    android:id="@+id/smallartistalbum"
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="\uf04b"
+                android:textSize="24dp"
+                android:padding="10dp"
+                android:fontFamily="@font/fas"
+                android:id="@+id/smallplaypausebutton"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="\uf051"
+                android:textSize="24dp"
+                android:padding="10dp"
+                android:fontFamily="@font/fas"
+                android:layout_marginRight="10dp"
+                android:id="@+id/smallnextbutton"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:paddingHorizontal="60dp"
+                    android:text=""
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/playerfullscreentitle"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:id="@+id/playerfullscreenartistandalbum"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="20:20"
+                        android:id="@+id/fullscreenmusicposition"
+                        />
+
+                    <com.google.android.material.slider.Slider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:labelBehavior="gone"
+                        android:value="0.5"
+                        app:trackHeight="3dp"
+                        android:id="@+id/fullscreenmusicslider"
+                        app:thumbRadius="6dp"
+                        />
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="20:20"
+                        android:id="@+id/fullscreenmusicduration"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:paddingHorizontal="40dp"
+                    android:weightSum="5">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fas"
+                        android:gravity="center"
+                        android:text="\uf04a"
+                        android:textSize="25dp"
+                        android:id="@+id/fullscreenmusicprevbutton"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fas"
+                        android:gravity="center"
+                        android:text="\uf048"
+                        android:textSize="25dp"
+                        android:id="@+id/fullscreenmusicbackword"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fas"
+                        android:gravity="center"
+                        android:text="\uf04b"
+                        android:textSize="25dp"
+                        android:id="@+id/playerfullscreenplaypause"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fas"
+                        android:gravity="center"
+                        android:text="\uf051"
+                        android:textSize="25dp"
+                        android:id="@+id/fullscreenmusicforward"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fas"
+                        android:gravity="center"
+                        android:text="\uf04e"
+                        android:textSize="25dp"
+                        android:id="@+id/fullscreenmusicnextbutton"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

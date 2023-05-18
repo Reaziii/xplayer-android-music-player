@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <font name="thin">@font/montserratmedium</font>
+    <font name="semebold">@font/montserratsemibold</font>
+
+</resources>

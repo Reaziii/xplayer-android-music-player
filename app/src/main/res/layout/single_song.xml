@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/singlesonglayout"
+    android:background="@color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            tools:ignore="MissingDefaultResource"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="5dp"
+            android:background="@drawable/border_bottom"
+            android:weightSum="100"
+            >
+        <ImageView
+            android:layout_width="60dp"
+            android:minHeight="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/dms"
+            android:id="@+id/singlesongartwork"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"
+            android:paddingHorizontal="10dp"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dil ki doya hoy na tomar dil ki doya hoy na ogo tomar dil ki doya hoy na "
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserratregular"
+                android:id="@+id/singlesongtitle"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="12dp"
+                    android:textStyle="italic"
+                    android:text="Ymusic - Airtel buzz"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserratmediumitalic"
+                    android:id="@+id/albumArtist"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03:25"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/songduration"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
