@@ -2,12 +2,14 @@ package com.reaz.xplayer.services;
 
 
 import android.app.Activity;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -24,7 +26,7 @@ public class MediaPlayerNotificationPlayer {
 
     public MediaPlayerNotificationPlayer(Context context, Activity activity){
             notificationManagerCompat = NotificationManagerCompat.from(context);
-            String CHANNEL_ID = "my_channel_id";
+            String CHANNEL_ID = "my_channel_id", CHANNEL_NAME="XPLAYER";
             Bitmap largeImage = BitmapFactory.decodeResource(activity.getResources(), R.drawable.dms);
             Intent intent = new Intent(context, NotificationBroadcast.class);
             intent.setAction("ACTION_PREV");
@@ -34,6 +36,10 @@ public class MediaPlayerNotificationPlayer {
             intent.setAction("ACTION_NEXT");
             PendingIntent pendingIntent3 = PendingIntent.getBroadcast(context, 2, intent, 0);
             intent.setAction("ACTION_NOTIFICATION");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Channel Name", NotificationManager.IMPORTANCE_LOW);
+                notificationManagerCompat.createNotificationChannel(channel);
+            }
             NotificationCompat.Builder channel = new NotificationCompat.Builder(activity.getApplicationContext(), CHANNEL_ID)
                     .setSmallIcon(R.mipmap.logo_round)
                     .setLargeIcon(largeImage)
@@ -53,6 +59,7 @@ public class MediaPlayerNotificationPlayer {
                     channel.setContentTitle(song.title);
                     channel.setProgress(100, 10, false);
                     channel.setLargeIcon(musicArtworkshelper.retriveMusicArtwork(song.songId));
+                    notificationManagerCompat.notify(3334, channel.build());
                 }
                 @Override
                 public void onMusicStateChange(String status) {
