@@ -1,10 +1,18 @@
 package com.reaz.xplayer;
 
 import android.Manifest;
+import android.app.Notification;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.session.MediaSession;
 import android.os.Bundle;
+import android.support.v4.media.session.MediaSessionCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RemoteViews;
 
 import com.reaz.xplayer.components.MusicPlayer;
 import com.reaz.xplayer.dataase.MusicDB;
@@ -18,6 +26,8 @@ import com.reaz.xplayer.services.MediaPlayerNotificationPlayer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
@@ -32,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private database db;
     private Permissions permissionsHelper = new Permissions();
     FragmentTransaction fm = getSupportFragmentManager().beginTransaction();
+    private NotificationManagerCompat notificationManagerCompat;
+    private String CHANNEL_ID = "media_channel_1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +60,7 @@ public class MainActivity extends AppCompatActivity {
         permissionsHelper.AskForStoragePermission(this, this);
         MusicDB musicDB = new MusicDB(this);
         musicDB.storeAllsongs();
-
-//        MediaPlayerNotificationPlayer mediaPlayerNotificationPlayer = new MediaPlayerNotificationPlayer(this,this);
-
+        MediaPlayerNotificationPlayer mediaPlayerNotificationPlayer = new MediaPlayerNotificationPlayer(this,this);
 
     }
     @Override
@@ -67,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+
     @Override
     public void onBackPressed(){
         if(drawer.isOpen()){
@@ -80,4 +94,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onDetachedFromWindow() {
+        Log.d("music", "closed");
+        super.onDetachedFromWindow();
+    }
 }
