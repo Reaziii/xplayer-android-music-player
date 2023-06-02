@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "599578700239",
+    "project_id": "letsgo-387419",
+    "storage_bucket": "letsgo-387419.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599578700239:android:fc5d9a7df81f1c0b4a0aba",
+        "android_client_info": {
+          "package_name": "com.reaz.letsgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599578700239-jgan5032ac3puhbmpkg8m0bmhrd93a62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reaz.letsgo",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "599578700239-pl0kt0soeonjkr3cmiaoruiauu7uuuuv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTZIfgeDtu__59yTTgO_fWtb7igSu8nbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599578700239-dsd12asq1opmlh9jjqrb1bemik8fjusr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
