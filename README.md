@@ -16,10 +16,7 @@ A simple and intuitive music player app built using Android Studio with Java. Th
 
 Here are some screenshots from the app:
 
-![Screenshot 1](/screenshots/image1.jpg)
-![Screenshot 2](/screenshots/image2.jpg)
-![Screenshot 3](/screenshots/image3.jpg)
-![Screenshot 4](/screenshots/image4.jpg)
+![Screenshot 1](/screenshots/ss.png)
 ## Usage
 
 To use the Music Player app, follow these steps:
